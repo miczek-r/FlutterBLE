@@ -42,41 +42,6 @@ generateDialog(BuildContext context, BluetoothService serviceUART) {
       });
 }
 
-/*generateDialog1(BuildContext context, BluetoothService serviceUART) {
-  final _writeController = TextEditingController();
-  return showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text("Command"),
-          content: Row(
-            children: <Widget>[
-              Expanded(
-                child: TextField(
-                  controller: _writeController,
-                ),
-              ),
-            ],
-          ),
-          actions: <Widget>[
-            FlatButton(
-              child: Text("Send"),
-              onPressed: () {
-                setCommand(serviceUART, _writeController.value.text);
-                Navigator.pop(context);
-              },
-            ),
-            FlatButton(
-              child: Text("Cancel"),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        );
-      });
-}*/
-
 generateDialog2(BuildContext context, BluetoothService serviceUART) {
   final _writeController = MaskedTextController(mask: '0000');
 
@@ -162,33 +127,6 @@ generateConfDialog(BuildContext context, BluetoothService serviceUART) {
               ),
             ],
           ),
-
-          /*content: Column(
-            children: <Widget>[
-              Flexible(
-                child: TextField(
-                    controller: _von,
-                    decoration: InputDecoration(
-                        hintText: 'Poziom zadziałania rejestratora')),
-              ),
-              Flexible(
-                child: TextField(
-                    controller: _voff,
-                    decoration: InputDecoration(
-                        hintText: 'Poziom wyłączenia rejestratora')),
-              ),
-              Flexible(
-                child: TextField(
-                    controller: _vs,
-                    decoration: InputDecoration(hintText: 'Czas analizy')),
-              ),
-              Flexible(
-                child: TextField(
-                    controller: _vp,
-                    decoration: InputDecoration(hintText: 'Liczba prób')),
-              ),
-            ],
-          ),*/
           actions: <Widget>[
             FlatButton(
               child: Text("Send"),

@@ -37,6 +37,15 @@ getCommand(BluetoothService serviceUART, String command) async {
 }
 
 notify(BluetoothService serviceUART) async {
+/*  print("update");
+  print(serviceUART.characteristics
+      .firstWhere((element) => element.properties.notify)
+      .isNotifying);
+
+  print("connected");
+  List<BluetoothDevice> asd = await FlutterBlue.instance.connectedDevices;
+  print(asd.contains(globals.connectedDevice));
+*/
   if (globals.connectedDevice != null) {
     await serviceUART.characteristics
         .where((element) => element.properties.notify)

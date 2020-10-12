@@ -107,18 +107,6 @@ class _DeviceViewState extends State<DeviceView> {
               });
             }),
       ),
-      /*Container(
-        height: 50,
-        color: Colors.amber[600],
-        child: RaisedButton(
-            child: Text('Get Record 1', style: TextStyle(color: Colors.grey[900])),
-            onPressed: () async {
-              globals.result = await getRecord(serviceUART, "1");
-              setState(() {
-                globals.result = globals.result;
-              });
-            }),
-      ),*/
       Container(
         height: 50,
         child: RaisedButton(
@@ -189,7 +177,7 @@ class _DeviceViewState extends State<DeviceView> {
       Container(
         height: 50,
         child: RaisedButton(
-            color: Colors.amber[100],
+            color: Colors.amber[200],
             child: Text('Battery', style: TextStyle(color: Colors.grey[900])),
             onPressed: () async {
               var sub = serviceBattery.characteristics
@@ -227,16 +215,7 @@ class _DeviceViewState extends State<DeviceView> {
               color: Colors.red[900],
               onPressed: () async {
                 areYouSureAlert(context, "route");
-                //print(_connectedDevice);
               }))
-      /*Container(
-          height: 50,
-          color: Colors.amber[500],
-          child: RaisedButton(
-              child: Text('Notify', style: TextStyle(color: Colors.grey[900])),
-              onPressed: () async {
-                notify(serviceUART);
-              }))*/
     ]);
   }
 
