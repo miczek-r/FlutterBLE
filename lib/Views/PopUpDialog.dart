@@ -100,7 +100,8 @@ generateDialog2(BuildContext context, BluetoothService serviceUART) {
               onPressed: () async {
                 globals.result =
                     await getRecord(serviceUART, (_writeController.value.text));
-
+                if (globals.result == "")
+                  await getRecord(serviceUART, (_writeController.value.text));
                 Navigator.pop(context);
               },
             ),

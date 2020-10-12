@@ -7,7 +7,6 @@ import 'package:ble_connect/Globals/globals.dart' as globals;
 
 getCommand(BluetoothService serviceUART, String command) async {
   String temp;
-
   temp = "";
 
   await serviceUART.characteristics
@@ -31,6 +30,7 @@ getCommand(BluetoothService serviceUART, String command) async {
       if (value[i] != 10) temp += String.fromCharCode(value[i]);
     }
   });
+
   return Future.delayed(Duration.zero, () async => temp);
 
   // return Future.delayed(Duration(milliseconds: 200), () => temp);
@@ -94,8 +94,7 @@ getRecord(BluetoothService serviceUART, String record) async {
       .where((element) => element.properties.write)
       .first
       .write(utf8.encode("gm " + record));
-  // ignore: await_only_futures
-  await serviceUART.characteristics
+  serviceUART.characteristics
       .where((element) => element.properties.notify)
       .first
       .value

@@ -67,6 +67,12 @@ class _DeviceViewState extends State<DeviceView> {
               setState(() {
                 globals.result = globals.result;
               });
+              if (globals.result == "") {
+                globals.result = await getCommand(serviceUART, "gt");
+                setState(() {
+                  globals.result = globals.result;
+                });
+              }
             }),
       ),
       Container(
@@ -80,6 +86,12 @@ class _DeviceViewState extends State<DeviceView> {
               setState(() {
                 globals.result = globals.result;
               });
+              if (globals.result == "") {
+                globals.result = await getCommand(serviceUART, "gr");
+                setState(() {
+                  globals.result = globals.result;
+                });
+              }
             }),
       ),
       Container(
@@ -118,6 +130,12 @@ class _DeviceViewState extends State<DeviceView> {
               setState(() {
                 globals.result = globals.result;
               });
+              if (globals.result == "") {
+                globals.result = await getCommand(serviceUART, "gc");
+                setState(() {
+                  globals.result = globals.result;
+                });
+              }
             }),
       ),
       Container(
